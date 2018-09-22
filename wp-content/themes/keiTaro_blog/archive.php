@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 <!-- ▲ヘッダーファイル読み込み▲ -->
 
-<div class="container main-wrapper py-4">
+<div class="container main-wrapper pb-4">
     <div class="row py-5 mb-4 border bg-white">
 
         <!-- ▼パンくずリスト▼ -->

@@ -12,6 +12,11 @@
                 <div id="content" class="col-sm-12 pb-3 px-4">
                     <?php if (have_posts()): ?>
                     <?php while (have_posts()): the_post(); ?>
+                    <?php
+                    if (!is_user_logged_in() && !is_bot()) {
+                        setPostViews(get_the_ID());
+                    }
+                    ?>
                     <div id="content-datetime"><time class="text-warning" datetime="<?php the_time('Y-n-d') ?>"><span class="far fa-calendar-alt pr-2"></span><?php the_time('Y/n/d (D)') ?></time></div>
                     <div id="content-category">
                         <a href="#" class="badge badge-warning text-white"><span class="fas fa-folder-open pr-2"></span><?php echo esc_html(get_the_parent_category()); ?></a>
@@ -66,10 +71,16 @@
             </div>
 
             <!-- ▼関連投稿一覧▼ -->
-            <div class="row">
+            <div class="row mb-5">
                 <?php get_template_part('relation'); ?>
             </div>
             <!-- ▲関連投稿一覧▲ -->
+
+            <!-- ▼人気投稿一覧▼ -->
+            <div class="row mb-5">
+                <?php get_template_part('recommend'); ?>
+            </div>
+            <!-- ▲人気投稿一覧▲ -->
 
         </div>
         <!-- ▲投稿記事一覧▲ -->
