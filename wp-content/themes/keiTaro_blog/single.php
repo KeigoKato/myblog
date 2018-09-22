@@ -46,13 +46,13 @@
 
                     <!-- ▼この記事を書いた人▼ -->
                     <div id="content-author" class="d-none d-sm-block">
-                        <h5 class="text-center"><span class="fas fa-arrow-circle-down pr-3"></span>この記事を書いた人 - About -</h5>
+                        <h5 class="text-center mb-3"><span class="fas fa-arrow-circle-down pr-3"></span>この記事を書いた人 - About -</h5>
                         <div class="card flex-md-row shadow-sm h-md-200 rounded-0">
                             <div class="thumbnail position-relative">
-                                <a href="#"><img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [250x200]" style="width: 180px; height: 180px;" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/img-home-menu-2.png" data-holder-rendered="true"></a>
+                                <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [250x200]" style="width: 180px; height: 180px;" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/img-home-menu-2.png" data-holder-rendered="true">
                             </div>
                             <div class="card-body d-flex flex-column align-items-start p-sm-4 py-5 mw-200px">
-                                <h5 class="mb-3"><a class="text-dark" href="#">けいたろう。</a></h5>
+                                <h5 class="mb-3">けいたろう。</h5>
                                 <p class="card-text mb-0 txts">このサイトを運営しています。主に東京で活動しているWEBエンジニアです。WordPressサイトのカスタマイズ案件を中心に受注しております。私の詳しいプロフィールはこちらをごらんください。</p>
                             </div>
                         </div>
