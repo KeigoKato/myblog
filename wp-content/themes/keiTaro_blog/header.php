@@ -62,3 +62,12 @@
     <!-- ▼ヘッダー大画像下のナビゲーションバー▼ -->
 
 </header>
+<div class="container px-0">
+    <div class="row">
+        <!-- ▼パンくずリスト▼ -->
+        <div id="breadcrumb" class="w-100">
+            <?php breadcrumb(); ?>
+        </div>
+        <!-- ▲パンくずリスト▲ -->
+    </div>
+</div>

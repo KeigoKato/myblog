@@ -7,4 +7,5 @@ require_once locate_template('lib/init.php');        // 初期設定の関数
 // require_once locate_template('lib/scripts.php');     // CSSやJavascript関連の関数
 // require_once locate_template('lib/ads.php');         // 広告関連の関数
 require_once locate_template('lib/widgets.php');     // サイドバー、ウィジェットの関数
+require_once locate_template('lib/breadclumb.php');     // パンくずリスト
 require_once locate_template('lib/custom.php');      // その他カスタマイズの関数

@@ -2,13 +2,8 @@
 <?php get_header(); ?>
 <!-- ▲ヘッダーファイル読み込み▲ -->
 
-<div class="container main-wrapper py-4">
+<div class="container main-wrapper pb-4">
     <div class="row py-5 mb-4 border bg-white">
-
-        <!-- ▼パンくずリスト▼ -->
-        <?php get_template_part('breadcrumb'); ?>
-        <!-- ▲パンくずリスト▲ -->
-
         <!-- ▼投稿記事一覧▼ -->
         <div class="col-sm-8 px-4 post-list">
             <div class="row">
