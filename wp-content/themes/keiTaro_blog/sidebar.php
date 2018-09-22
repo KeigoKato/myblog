@@ -21,6 +21,7 @@
             </div>
         </div>
 
+        <!-- ▼サイドバーの記事カテゴリー一覧▼ -->
         <div id="sidebar-widget" class="col-sm-12">
             <div class="accordion" id="accordion2" role="tablist">
                 <div class="card-header text-center rounded-0 text-center text-white bg-primary">記事のカテゴリー</div>
@@ -28,7 +29,7 @@
                 $pc_combi_list = get_category_combi_list(false);
                 $i = 0;
                 ?>
-                <?php foreach ($pc_combi_list as $parent => $children): ?>
+                <?php foreach ($pc_combi_list as $parent => $children_list): ?>
                 <?php $i++; ?>
                 <div class="card rounded-0">
                     <div class="card-header bg-white" role="tab" id="heading<?php echo esc_html($i); ?>">
@@ -39,14 +40,15 @@
                         </h5>
                     </div>
                     <div id="collapse<?php echo esc_html($i); ?>" class="collapse text-whtie" role="tabpane<?php echo esc_html($i); ?>" aria-labelledby="heading<?php echo esc_html($i); ?>" data-parent="#accordion2" style="">
-                        <?php foreach ($children as $child): ?>
-                        <div id="child-category" class="card-body px-5 py-2"><?php echo esc_html($child); ?></div>
+                        <?php foreach ($children_list as $children): ?>
+                        <a href="<?php echo esc_url(home_url('/category/'.$children["slug"])); ?>"><div id="child-category" class="card-body px-5 py-2"><?php echo esc_html($children["name"]); ?>    (<?php echo esc_html($children["count"]) ?>)</div></a>
                         <?php endforeach; ?>
                     </div>
                 </div>
                 <?php endforeach; ?>
             </div>
         </div>
+        <!-- ▲サイドバーの記事カテゴリー一覧▲ -->
 
     </div>
 </div>

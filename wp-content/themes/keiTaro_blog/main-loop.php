@@ -1,3 +1,4 @@
+
 <div class="col-sm-6 px-0">
     <div class="card mb-5 rounded-0">
         <div class="imgWrapper">
@@ -10,10 +11,10 @@
             </a>
         </div>
         <span class="position-absolute px-3 text-white bg-primary category-on-img">
-            <?php if (is_home()): ?>
+            <?php if (is_home() || is_front_page()): ?>
             <?php echo esc_html(get_the_parent_category($cat)); ?>
             <?php elseif (is_archive()): ?>
-            <?php echo esc_html(get_the_child_category($cat)); ?>
+            <?php echo esc_html(get_a_child_category()); ?>
             <?php endif; ?>
         </span>
         <div class="card-body">

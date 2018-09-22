@@ -32,6 +32,23 @@ function get_the_child_category($cat) {
 }
 
 /**
+ * 子カテゴリーをひとつ取り出す
+ *
+ * @return void
+ */
+function get_a_child_category() {
+    $cats = get_the_category();
+    foreach($cats as $cat) {
+        if($cat->parent) {
+            $child_cat = $cat->cat_name;
+        }
+    }
+    return $child_cat;
+}
+
+
+
+/**
  * the_excerpt()メソッドで抜粋した文の末尾の文字を変更する
  *
  * @return string
@@ -56,12 +73,14 @@ function get_category_combi_list($ishide_empty) {
     if (!empty($terms) && !is_wp_error($terms)) {
         foreach ($terms as $term) {                        // カテゴリーをひとつずつ見ていく
             $child_ids = array();
+            $child_slug = array();
+            $child_count = array();
             if ($term->parent === 0) {                     // もし親カテゴリーだったら
                 $parent_id = $term->term_id;               // その親カテゴリーのIDを取得する
                 $parent_name = $term->name;                // その親カテゴリーの名前はあとで使う
                 foreach ($terms as $term) {
                     if ($term->parent === $parent_id) {    // 上で取得した親カテゴリーIDを持つカテゴリーならば
-                        $child_ids[] = $term->name;        // その子カテゴリーのリストを作る
+                        $child_ids[] = array('name' => $term->name, 'slug' => $term->slug, 'count' => $term->count);        // その子カテゴリーの名前のリストを作る
                     }
                 }
                 $pc_combi_list[$parent_name] = $child_ids;      // ある親カテゴリーをキーにして、それに対応する子カテゴリーの配列を値に代入する
