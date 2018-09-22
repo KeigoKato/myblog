@@ -27,71 +27,14 @@
                     <?php else: ?>
                     <img id="content-thumbnail" width="100%" height="360px" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/noimage.png" alt="content-thumbnail">
                     <?php endif; ?>
-                    <?php get_template_part('snsbtn'); ?>
+                    <?php get_template_part('snsbtn', 'square'); ?>
                     <div id="content-main" class="py-5">
                         <?php the_content(); ?>
-
-                        <?php
-                        $terms = get_terms('category', array(
-                            'hide_empty' => false
-                        ));
-                        $pc_combi = array();
-                        if (!empty($terms) && !is_wp_error($terms)) {
-                            foreach ($terms as $term) {                        // カテゴリーをひとつずつ見ていく
-                                $child_ids = array();
-                                if ($term->parent === 0) {                     // もし親カテゴリーだったら
-                                    $parent_id = $term->term_id;               // その親カテゴリーのIDを取得する
-                                    $parent_name = $term->name;                // その親カテゴリーの名前はあとで使う
-                                    foreach ($terms as $term) {
-                                        if ($term->parent === $parent_id) {    // 上で取得した親カテゴリーIDを持つカテゴリーならば
-                                            $child_ids[] = $term->name;        // その子カテゴリーのリストを作る
-                                        }
-                                    }
-                                    $pc_combi[$parent_name] = $child_ids;      // ある親カテゴリーをキーにして、それに対応する子カテゴリーの配列を値に代入する
-                                }
-                            }
-                            print_r($pc_combi);
-                        };
-                        ?>
-
-                        <?php $terms = get_terms( 'category', array(
-                            'hide_empty' => false,
-                        ) );
-                        if( !empty( $terms ) && !is_wp_error( $terms ) ): ?>
-                            <ul>
-                            <?php foreach($terms as $term) : ?>
-                                <li>
-                                ターム名: <?php echo $term->name; ?>
-                                スラッグ: <?php echo $term->slug; ?>
-                                ID: <?php echo $term->term_id; ?>
-                                投稿数: <?php echo $term->count; ?>
-                                親カテゴリーID: <?php echo $term->parent; ?>
-                                </li>
-                            <?php endforeach; ?>
-                            </ul>
-                            <ul>
-                            <?php foreach($terms as $term) : ?>
-                                <li>
-                                ターム名: <?php echo $term->name; ?>
-                                スラッグ: <?php echo $term->slug; ?>
-                                ID: <?php echo $term->term_id; ?>
-                                投稿数: <?php echo $term->count; ?>
-                                親カテゴリーID: <?php echo $term->parent; ?>
-                                </li>
-                            <?php endforeach; ?>
-                            </ul>
-                        <?php endif; ?>
-
-
-
-
-
-
-
                     </div>
                     <?php endwhile; ?>
                     <?php endif; ?>
-                    <?php get_template_part('snsbtn'); ?>
+
+                    <?php get_template_part('snsbtn', 'square'); ?>
 
                     <?php if( has_tag() ): ?>
                     <div id="content-tag">
@@ -116,14 +59,11 @@
                     </div>
                     <!-- ▲この記事を書いた人▲ -->
 
-                    <!-- ▼snsボタンリスト▼ -->
-                    <div class="sns-list pt-2 pb-5 text-center d-none d-sm-block">
-                        <a href="#" class="border rounded-circle mx-2 fab fa-twitter sns-icon text-white"></a>
-                        <a href="#" class="border rounded-circle mx-2 fab fa-facebook-f sns-icon text-white"></a>
-                        <a href="#" class="border rounded-circle mx-2 fab fa-google-plus-g sns-icon text-white"></a>
-                        <a href="#" class="border rounded-circle mx-2 fas fa-rss sns-icon text-white"></a>
+                    <!-- ▼丸いsnsボタンリスト▼ -->
+                    <div id="snsbtn-circle" class="d-none d-sm-block">
+                        <?php get_template_part('snsbtn', 'circle'); ?>
                     </div>
-                    <!-- ▲snsボタンリスト▲ -->
+                    <!-- ▲丸いsnsボタンリスト▲ -->
 
                 </div>
                 <!-- ▲投稿記事内容を出力▲ -->
