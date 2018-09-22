@@ -36,6 +36,8 @@
                 </div>
             </div>
             <?php endwhile; ?>
+            <?php else: ?>
+            <div class="col-12 mb-3">関連項目はまだありません ...</div>
             <?php endif; ?>
             <?php wp_reset_postdata(); ?>
             </div>
