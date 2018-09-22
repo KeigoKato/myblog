@@ -67,7 +67,7 @@
 
             <!-- ▼関連投稿一覧▼ -->
             <div class="row">
-                <?php get_template_part('recommend'); ?>
+                <?php get_template_part('relation'); ?>
             </div>
             <!-- ▲関連投稿一覧▲ -->
 

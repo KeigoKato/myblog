@@ -1,3 +1,4 @@
+<?php if (!is_404()): ?>
 <div id="relations">
     <div class="col-sm-12">
         <h5 class="text-center mb-3"><span class="fas fa-arrow-circle-down pr-3"></span>関連投稿 - Related Posts -</h5>
@@ -9,15 +10,15 @@
                 $catid = $cat->cat_ID;
                 break;
             }
-            $recommend = new WP_Query(array(
+            $relation = new WP_Query(array(
                 'posts_per_page' => 4,
                 'cat' => $catid,
                 'post__not_in' => array($post_id)
             ));
             ?>
             <div class="row mx-sm-2">
-            <?php if ($recommend->have_posts()): ?>
-            <?php while ($recommend->have_posts()): $recommend->the_post(); ?>
+            <?php if ($relation->have_posts()): ?>
+            <?php while ($relation->have_posts()): $relation->the_post(); ?>
             <div class="col-sm-3 col-6">
                 <div class="card mx-0">
                     <a href="<?php the_permalink(); ?>">
@@ -44,3 +45,4 @@
         </div>
     </div>
 </div>
+<?php endif; ?>
