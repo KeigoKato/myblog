@@ -1,11 +1,7 @@
 body {
     font-family: Quicksand, "ヒラギノ角ゴ ProN W3", "Hiragino Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
 }
-
 h1 {
-    font-size: 1.4rem;
-}
-h2 {
     color: white;
     background-color: #315096;
     box-shadow: 0 3px 0 #1f325d;
@@ -14,7 +10,7 @@ h2 {
     width: 100%;
     font-size: 1.3rem;
 }
-h3 {
+h2 {
     color: #315096;
     border-top: 3px solid #315096;
     border-bottom: 3px solid #315096;
@@ -23,17 +19,20 @@ h3 {
     width: 100%;
     font-size: 1.2rem;
 }
-h4 {
+h3 {
     margin-bottom: 20px;
     position: relative;
     line-height: 1.4em;
     font-size: 1.1rem;
 }
-h5 {
+h4 {
     font-size: 1.0rem;
 }
-h6 {
+h5 {
     font-size: 0.9rem;
+}
+h6 {
+    font-size: 0.8rem;
 }
 @media only screen and (min-width: 781px){
     ol {
@@ -92,4 +91,8 @@ blockquote {
 strong {
     font-weight: normal;
     background: linear-gradient(transparent 65%, #9db0d8 40%)!important;
+}
+img {
+    width: 100%;
+    height: auto;
 }

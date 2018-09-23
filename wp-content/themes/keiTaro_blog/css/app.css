@@ -408,9 +408,6 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 */
 #content-main h1 {
-    font-size: 1.4rem;
-}
-#content-main h2 {
     color: white;
     background-color: #315096;
     box-shadow: 0 3px 0 #1f325d;
@@ -419,7 +416,7 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     width: 100%;
     font-size: 1.3rem;
 }
-#content-main h3 {
+#content-main h2 {
     color: #315096;
     border-top: 3px solid #315096;
     border-bottom: 3px solid #315096;
@@ -428,17 +425,20 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     width: 100%;
     font-size: 1.2rem;
 }
-#content-main h4 {
+#content-main h3 {
     margin-bottom: 20px;
     position: relative;
     line-height: 1.4em;
     font-size: 1.1rem;
 }
-#content-main h5 {
+#content-main h4 {
     font-size: 1.0rem;
 }
-#content-main h6 {
+#content-main h5 {
     font-size: 0.9rem;
+}
+#content-main h6 {
+    font-size: 0.8rem;
 }
 @media only screen and (min-width: 781px){
     #content-main ol {
@@ -497,4 +497,12 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 #content-main strong {
     font-weight: normal;
     background: linear-gradient(transparent 65%, #9db0d8 40%)!important;
+}
+#content-main img {
+    width: 100%;
+    height: auto;
+}
+#content-main p img {
+    width: 100%;
+    height: auto;
 }
