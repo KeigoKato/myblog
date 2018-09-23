@@ -1,6 +1,17 @@
 <?php
 
 /**
+ * 現在の記事のカテゴリーを取得する
+ *
+ * @return void
+ */
+function get_current_category() {
+    $current_cat = get_queried_object();
+    $cat_name = $current_cat->name;
+    return $cat_name;
+}
+
+/**
  * 投稿の親カテゴリーを取得する
  *
  * @return void

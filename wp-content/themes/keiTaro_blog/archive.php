@@ -14,8 +14,14 @@
 
             <!-- ▼アーカイブ名▼ -->
             <div id="archive-title" class="mb-4 text-center">
-                <div style="font-size: 12px;">- Category -</div>
-                <div class="mb-3" style="font-size: 18px;"><?php echo esc_html(get_the_parent_category()); ?></div>
+                <div style="font-size: 12px;">
+                    <?php if (is_category()): ?>
+                    - カテゴリー -
+                    <?php elseif (is_month()): ?>
+                    - 月別アーカイブ -
+                    <?php endif; ?>
+                </div>
+                <div class="mb-3" style="font-size: 18px;"><?php echo esc_html(get_current_category()); ?></div>
             </div>
             <!-- ▲アーカイブ名▲ -->
 
