@@ -34,23 +34,26 @@
                         <a class="nav-link px-5 py-3 change-color" href="<?php echo esc_url(home_url()); ?>">トップ <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-5 py-3 change-color" href="#">ポートフォリオ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-5 py-3 change-color" href="#">WordPress</a>
+                        <a class="nav-link px-5 py-3 change-color" href="#">プロフィール</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle px-5 py-3 change-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">記事</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-dark text-sm-left px-4" href="#">Wordpressカスタマイズ</a>
-                            <a class="dropdown-item text-dark text-sm-left px-4" href="#">プログラミング</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-dark text-sm-left px-4" href="#">その他</a>
-                            <a class="dropdown-item text-dark text-sm-left px-4" href="#">その他</a>
+                        <a class="nav-link dropdown-toggle px-5 py-3 change-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">記事カテゴリー</a>
+                        <?php
+                        $pc_combi_list = get_category_combi_list(false);
+                        ?>
+                        <div class="dropdown-menu text-left rounded-0" aria-labelledby="navbarDropdown">
+                            <?php foreach ($pc_combi_list as $parent => $children_list): ?>
+                                <?php foreach ($children_list as $children): ?>
+                                <a class="dropdown-item text-dark text-sm-left px-4" href="<?php echo esc_url(home_url('/category/'.$children["slug"])); ?>"><?php echo esc_html($children["name"]); ?>    (<?php echo esc_html($children["count"]) ?>)</a>
+                                <?php endforeach; ?>
+                                <?php if ($children_list !== end($pc_combi_list)): ?>
+                                <div class="dropdown-divider"></div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-5 py-3 change-color" href="#">記事検索</a>
+                        <a href="#" class="nav-link px-5 py-3 change-color" data-toggle="modal" data-target="#exampleModalCenter">記事検索</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-5 py-3 change-color" href="#">お問い合わせ</a>
@@ -71,3 +74,8 @@
         <!-- ▲パンくずリスト▲ -->
     </div>
 </div>
+
+
+<!-- ▼検索テキスト欄をモーダルウィンドウで表示▼ -->
+<?php get_template_part('modal-search'); ?>
+<!-- ▲検索テキスト欄をモーダルウィンドウで表示▲ -->
