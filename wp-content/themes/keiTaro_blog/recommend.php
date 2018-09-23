@@ -1,4 +1,10 @@
-<?php if (!is_404()): ?>
+<?php
+if (!is_404()) {
+    $posts_per_page = '4';
+} else {
+    $posts_per_page = '12';
+}
+?>
 <div id="relations">
     <div class="col-sm-12">
         <h5 class="text-center mb-3"><span class="fas fa-arrow-circle-down pr-3"></span>人気投稿<span class="d-none d-sm-inline"> - Recommended Posts -</h5>
@@ -9,7 +15,7 @@
             $args = array(
                 'meta_key' => 'post_views_count',
                 'orderby' => 'meta_value_num',
-                'posts_per_page' => '4',
+                'posts_per_page' => $posts_per_page,
                 'order=DESC',
             );
             query_posts($args); ?>
@@ -42,4 +48,3 @@
         </div>
     </div>
 </div>
-<?php endif; ?>

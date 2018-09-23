@@ -14,29 +14,38 @@
                         <h2>お探しのページは削除されたかURLが変更された可能性があります。</h2>
                         <p>お手数をおかけしますが、以下の方法からもう一度目的のページをお探し下さい。</p>
                     </div>
+
                     <div class="row">
+
+                        <!-- ▼記事を検索▼ -->
                         <div class="col-sm-12">
-                            <div id="404-search" class="mb-5">
+                            <div id="404-search" class="my-5">
                                 <h5 class="text-center mb-3"><span class="fas fa-arrow-circle-down pr-3"></span>記事を検索 - Search -</h5>
                                 <form role="search" method="get" id="searchform" class="searchform form-inline" action="<?php echo esc_url( home_url( '/' ) ); ?>">
                                     <div class="form-group mb-2 w-100">
-                                        <!-- <label class="screen-reader-text" for="s"><?php // _x( 'Search for:', 'label' ); ?></label> -->
                                         <div class="w-75 pr-2">
                                             <input type="text" class="form-control w-100" placeholder="文字列を入力してください..." value="<?php echo get_search_query(); ?>" name="s" id="s">
                                         </div>
                                         <div class="w-25 pl-3">
-                                            <input type="submit" id="searchsubmit" class="btn btn-primary w-100" value="<?php //echo esc_attr_x( 'Search', 'submit button' ); ?>検索">
+                                            <input type="submit" id="searchsubmit" class="btn btn-primary w-100" value="検索">
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        <div id="404-relation" class="mb-5">
-                            <h5 class="text-center mb-3"><span class="fas fa-arrow-circle-down pr-3"></span>人気記事一覧 - Popular Articles -</h5>
-                        </div>
+                        <!-- ▲記事を検索▲ -->
 
-                        <div id="404-categories" class="mb-5">
-                            <h5 class="text-center mb-3"><span class="fas fa-arrow-circle-down pr-3"></span>カテゴリー一覧 - Category -</h5>
+                        <!-- ▼人気記事一覧▼ -->
+                        <div id="404-relation" class="my-5">
+                            <!-- <h5 class="text-center mb-3"><span class="fas fa-arrow-circle-down pr-3"></span>人気記事一覧 - Popular Articles -</h5> -->
+                            <?php get_template_part('recommend'); ?>
+                        </div>
+                        <!-- ▲人気記事一覧▲ -->
+
+                        <!-- ▼カテゴリー一覧▼ -->
+                        <div class="col-sm-12">
+                            <div id="404-categories" class="my-5">
+                                <h5 class="text-center mb-3"><span class="fas fa-arrow-circle-down pr-3"></span>カテゴリー一覧 - Category -</h5>
                                 <div id="sidebar-widget" class="col-sm-12">
                                     <div class="accordion" id="accordion2" role="tablist">
                                         <div class="card-header text-center rounded-0 text-center text-white bg-primary">記事のカテゴリー</div>
@@ -65,6 +74,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- ▲カテゴリー一覧▲ -->
 
                     </div>
                 </div>
@@ -77,10 +87,6 @@
         <!-- ▼サイドバー▼ -->
         <?php get_sidebar(); ?>
         <!-- ▲サイドバー▲ -->
-
-
-
-
 
     </div>
 </div>
