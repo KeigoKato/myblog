@@ -14,8 +14,8 @@
                         <input type="text" class="form-control" id="recipient-name" placeholder="キーワードを入力してください..." value="<?php echo get_search_query(); ?>" name="s" id="s">
                     </div>
                     <div class="modal-footer border-0">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-                        <button type="submit" class="btn btn-primary">検索</button>
+                        <button type="button" class="btn btn-secondary rounded-0" data-dismiss="modal">閉じる</button>
+                        <button type="submit" class="btn btn-primary rounded-0">検索</button>
                     </div>
                 </form>
 
