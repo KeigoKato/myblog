@@ -14,8 +14,8 @@
 
             <!-- ▼アーカイブ名▼ -->
             <div id="archive-title" class="mb-4 text-center">
-                <div style="font-size: 12px;">- Category -</div>
-                <div class="mb-3" style="font-size: 18px;"><?php echo esc_html(get_the_parent_category()); ?></div>
+                <!-- <div style="font-size: 12px;">- 検索した文字列 -</div> -->
+                <div class="mb-3" style="font-size: 18px;">「<?php echo esc_html(get_search_query()); ?>」で検索した結果</div>
             </div>
             <!-- ▲アーカイブ名▲ -->
 

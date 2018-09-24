@@ -7,9 +7,7 @@
                 <h5 class="card-title">けいたろう</h5>
                 <small class="text-muted">WordPressエンジニア</small>
                 <div class="card-body px-4 py-3 text-left">
-                    <p class="card-text txts">主に東京で活動しているWEBエンジニアです。WordPressサイトのカスタマイズ案件を中心に受注しております。私の詳しいプロフィールは<a href="<?php home_url(); ?>/profile">こちら</a>をごらんください。
-                        <!-- このサイトは<a target="_blank" href="https://www.amazon.co.jp/%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89%E3%81%A4%E3%81%8F%E3%82%8B-WordPress%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%85%A5%E9%96%80-%E3%82%B5%E3%82%A4%E3%83%88%E5%88%B6%E4%BD%9C%E3%81%8B%E3%82%89%E7%B4%8D%E5%93%81%E3%81%BE%E3%81%A7%E3%81%AE%E3%81%AF%E3%81%98%E3%82%81%E3%81%AE%E4%B8%80%E6%AD%A9-%E7%A7%8B%E5%85%83-%E8%8B%B1%E8%BC%94-ebook/dp/B01CJ92UAW">「ビジネスサイトをこれからつくる WordPressデザイン入門　サイト制作から納品までのはじめの一歩」</a>を参考に作成しました。 -->
-                    </p>
+                    <p class="card-text txts"><?php echo wpautop(get_the_author_meta('user_description')); ?></p>
                 </div>
 
                 <!-- ▼丸いSNSのボタン▼ -->
