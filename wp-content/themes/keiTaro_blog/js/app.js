@@ -31,10 +31,10 @@ var navHeight = $('.under-navmenu').css('height');
 $window.on('scroll', function(){
     if ($window.scrollTop() > headerOffsetTop) {
         $('.under-navmenu').addClass('sticky');
-        $('#breadcrumb').css('margin-top', navHeight);
+        $('#breadcrumbs').css('margin-top', navHeight);
     } else {
         $('.under-navmenu').removeClass('sticky');
-        $('#breadcrumb').css('margin-top', 0);
+        $('#breadcrumbs').css('margin-top', 0);
     }
 });
 

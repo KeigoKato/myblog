@@ -2,6 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <?php wp_head(); ?>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 </head>
@@ -65,11 +66,11 @@
     <!-- ▼ヘッダー大画像下のナビゲーションバー▼ -->
 
 </header>
-<div class="container px-0">
+<div class="container">
     <div class="row">
         <!-- ▼パンくずリスト▼ -->
-        <div id="breadcrumb" class="w-100">
-            <?php breadcrumb(); ?>
+        <div id="breadcrumbs" class="w-100">
+            <?php breadcrumbs(); ?>
         </div>
         <!-- ▲パンくずリスト▲ -->
     </div>

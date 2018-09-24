@@ -4,12 +4,12 @@
  *
  * @return void
  */
-function breadcrumb(){
+function breadcrumbs(){
     if (!is_home() || !is_front_page()) {
         global $post;
         $str = '';
         $pNum = 2;
-        $str .= '<div class="col-sm-12">';
+        $str .= '<div class="col-sm-12 px-0">';
         $str .= '<nav aria-label="breadcrumb">';
         $str .= '<ol class="breadcrumb py-2 my-3 bg-white border rounded-0" style="font-size: 12px;">';
         $str .= '<li class="breadcrumb-item"><a href="'.home_url('/').'" class="home"><span>HOME</span></a></li>';
