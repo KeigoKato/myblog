@@ -12,14 +12,15 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <div class="top-navbar-list d-flex py-2">
-                <a class="top-navbar-list-item pr-4 change-color" href="<?php echo esc_url(home_url()); ?>">トップ</a>
-                <a class="top-navbar-list-item change-color" href="#">プロフィール</a>
+                <a class="top-navbar-list-item pr-4 change-color" href="<?php echo esc_url(home_url()); ?>"><i class="fas fa-home"></i>  トップ</a>
+                <a class="top-navbar-list-item change-color" href="#"><i class="fas fa-user"></i>  プロフィール</a>
             </div>
         </div>
     </nav>
 
     <!-- ▼ヘッダーの大画像▼ -->
-    <div class="header-thumbnail">
+    <div class="text-center header-thumbnail">
+        <img class="my-5 w-50 h-auto" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/site-title-logo.png" alt="site_title_logo">
     </div>
     <!-- ▲ヘッダーの大画像▲ -->
 
@@ -32,13 +33,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link px-5 py-3 change-color" href="<?php echo esc_url(home_url()); ?>">トップ <span class="sr-only">(current)</span></a>
+                        <a class="nav-link px-5 py-3 change-color" href="<?php echo esc_url(home_url()); ?>"><i class="fas fa-home"></i>  トップ<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-5 py-3 change-color" href="<?php echo esc_url(home_url('/myprofile/')); ?>">プロフィール</a>
+                        <a class="nav-link px-5 py-3 change-color" href="<?php echo esc_url(home_url('/myprofile/')); ?>"><i class="fas fa-user"></i>  プロフィール</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle px-5 py-3 change-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">記事カテゴリー</a>
+                        <a class="nav-link dropdown-toggle px-5 py-3 change-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-newspaper"></i>  記事カテゴリー</a>
                         <?php
                         $pc_combi_list = get_category_combi_list(false);
                         ?>
@@ -54,10 +55,10 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link px-5 py-3 change-color" data-toggle="modal" data-target="#exampleModalCenter">記事検索</a>
+                        <a href="#" class="nav-link px-5 py-3 change-color" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-search"></i>  記事検索</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-5 py-3 change-color" href="#">お問い合わせ</a>
+                        <a class="nav-link px-5 py-3 change-color" href="#"><i class="far fa-envelope"></i>  お問い合わせ</a>
                     </li>
                 </ul>
             </div>
