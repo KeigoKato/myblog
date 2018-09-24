@@ -21,7 +21,7 @@
                     - 月別アーカイブ -
                     <?php endif; ?>
                 </div>
-                <div class="mb-3" style="font-size: 18px;"><?php echo esc_html(get_current_category()); ?></div>
+                <div class="mb-3" style="font-size: 18px;"><?php echo esc_html(the_archive_title()); ?></div>
             </div>
             <!-- ▲アーカイブ名▲ -->
 
