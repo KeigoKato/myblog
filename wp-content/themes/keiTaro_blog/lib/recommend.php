@@ -37,23 +37,3 @@ function setPostViews($postID) {
 }
 //headに出力されるタグを削除(閲覧数を重複してカウントするのを防止するため)
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-
-/**
- * 検索エンジンのクローラーのアクセスを判定する
- *
- * @return boolean
- */
-function is_bot() {
-    $ua = $SERVER[HTTP_USER_AGENT];
-    $bot = array(
-        "googlebot",
-        "msnbot",
-        "yahoo"
-    );
-    foreach( $bot as $bot ) {
-        if (stripos( $ua, $bot ) !== false){
-            return true;
-        }
-    }
-    return false;
-}
