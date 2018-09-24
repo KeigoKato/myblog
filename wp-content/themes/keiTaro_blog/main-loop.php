@@ -10,7 +10,7 @@
                 <?php endif; ?>
             </a>
         </div>
-        <span class="position-absolute px-3 text-white bg-primary category-on-img">
+        <span class="position-absolute px-3 text-white bg-primary category-on-img" style="cursor: default;">
             <?php if (is_home() || is_front_page()): ?>
             <?php echo esc_html(get_the_parent_category($cat)); ?>
             <?php elseif (is_archive()): ?>

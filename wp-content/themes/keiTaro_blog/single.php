@@ -15,7 +15,7 @@
                     <?php setPostViews(get_the_ID()); ?>
                     <div id="content-datetime"><time class="text-warning" datetime="<?php the_time('Y-n-d') ?>"><span class="far fa-calendar-alt pr-2"></span><?php the_time('Y/n/d (D)') ?></time></div>
                     <div id="content-category">
-                        <a href="#" class="badge badge-warning text-white"><span class="fas fa-folder-open pr-2"></span><?php echo esc_html(get_the_parent_category()); ?></a>
+                        <div class="badge badge-warning text-white"><span class="fas fa-folder-open pr-2"></span><?php echo esc_html(get_the_parent_category()); ?></div>
                     </div>
                     <div id="content-title" class="py-0 my-0"><h1><?php the_title(); ?></h1></div>
                     <?php if (has_post_thumbnail()): ?>
@@ -48,8 +48,9 @@
                                 <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [250x200]" style="width: 180px; height: 180px;" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/img-home-menu-2.png" data-holder-rendered="true">
                             </div>
                             <div class="card-body d-flex flex-column align-items-start p-sm-4 py-5 mw-200px">
-                                <h5 class="mb-3">けいたろう。</h5>
-                                <p class="card-text mb-0 txts">このサイトを運営しています。主に東京で活動しているWEBエンジニアです。WordPressサイトのカスタマイズ案件を中心に受注しております。私の詳しいプロフィールはこちらをごらんください。</p>
+                                <h5 class="mb-2"><?php echo esc_html(get_the_author_meta('nickname')); ?></h5>
+                                <p class="card-text mb-2 txts"><?php echo esc_html(get_the_author_meta('user_description')); ?></p>
+                                <p class="card-text txts">私のプロフィールは<a href="<?php echo esc_url(home_url('/myprofile/')); ?>"><mark>ここを</mark></a>クリック</p>
                             </div>
                         </div>
                     </div>

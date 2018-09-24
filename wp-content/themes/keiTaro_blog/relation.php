@@ -30,7 +30,7 @@
                             <?php endif; ?>
                         </div>
                     </a>
-                    <span class="position-absolute px-3 text-white bg-primary category-on-img" style="font-size: 10px;"><?php echo esc_html(get_a_child_category()); ?></span>
+                    <span class="position-absolute px-3 text-white bg-primary category-on-img" style="font-size: 10px; cursor: default;"><?php echo esc_html(get_a_child_category()); ?></span>
                     <div class="card-body p-2">
                         <p class="card-text mb-2" style="font-size: 9px;"><time datetime="<?php the_time('Y/m/d') ?>"><span class="far fa-calendar-alt pr-2"></span><?php the_time('Y/n/d (D)'); ?></time></p>
                         <a href="<?php the_permalink(); ?>"><h5 class="card-title" style="font-size: 12px"><?php echo wp_trim_words(get_the_title(), 20); ?></h5></a>

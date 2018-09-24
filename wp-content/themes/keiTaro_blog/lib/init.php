@@ -37,3 +37,15 @@ function  css_js_reader() {
     wp_enqueue_script('app-js', get_template_directory_uri().'/js/app.js', array(), '1', true);
 }
 add_action('wp_enqueue_scripts', 'css_js_reader');
+
+
+// Add Favicon
+function favicon() {
+    echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_template_directory_uri().'/img/favicon.ico" />';
+}
+add_action('wp_head', 'favicon');
+
+function admin_favicon() {
+    echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_template_directory_uri().'/img/favicon.ico" />';
+}
+add_action('admin_head', 'admin_favicon');
