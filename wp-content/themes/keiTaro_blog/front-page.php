@@ -12,6 +12,13 @@
                     <?php if (have_posts()): ?>
                     <?php while (have_posts()): the_post(); ?>
                     <?php get_template_part('main', 'loop'); ?>
+                    <!-- ▼ページネーション▼ -->
+                    <?php
+                    if (function_exists("pagination")) {
+                        pagination($wp_query->max_num_pages);
+                    }
+                    ?>
+                    <!-- ▲ページネーション▲ -->
                     <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
