@@ -19,6 +19,8 @@
                     - カテゴリー -
                     <?php elseif (is_month()): ?>
                     - 月別アーカイブ -
+                    <?php elseif (is_year()): ?>
+                    - 年別アーカイブ -
                     <?php endif; ?>
                 </div>
                 <div class="mb-3" style="font-size: 18px;"><?php echo esc_html(the_archive_title()); ?></div>

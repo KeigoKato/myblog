@@ -32,14 +32,14 @@
                 <?php foreach ($pc_combi_list as $parent => $children_list): ?>
                 <?php $i++; ?>
                 <div class="card rounded-0">
-                    <div class="card-header bg-white" role="tab" id="heading<?php echo esc_html($i); ?>">
+                    <div class="card-header bg-white" role="tab" id="heading-category-<?php echo esc_html($i); ?>">
                         <h5 id="parent-category" class="mb-0">
-                            <a class="text-body collapsed px-3 py-3" data-toggle="collapse" href="#collapse<?php echo esc_html($i); ?>" aria-expanded="false" aria-controls="collapse<?php echo esc_html($i); ?>">
+                            <a class="text-body collapsed px-3 py-3" data-toggle="collapse" href="#collapse-category-<?php echo esc_html($i); ?>" aria-expanded="false" aria-controls="collapse-category-<?php echo esc_html($i); ?>">
                                 <?php echo esc_html($parent); ?>
                             </a>
                         </h5>
                     </div>
-                    <div id="collapse<?php echo esc_html($i); ?>" class="collapse text-whtie" role="tabpane<?php echo esc_html($i); ?>" aria-labelledby="heading<?php echo esc_html($i); ?>" data-parent="#accordion2" style="">
+                    <div id="collapse-category-<?php echo esc_html($i); ?>" class="collapse text-whtie" role="tabpane-category-<?php echo esc_html($i); ?>" aria-labelledby="heading-category-<?php echo esc_html($i); ?>" data-parent="#accordion2" style="">
                         <?php foreach ($children_list as $children): ?>
                         <a href="<?php echo esc_url(home_url('/category/'.$children["slug"])); ?>"><div id="child-category" class="card-body px-5 py-2"><?php echo esc_html($children["name"]); ?>    (<?php echo esc_html($children["count"]) ?>)</div></a>
                         <?php endforeach; ?>
@@ -50,80 +50,32 @@
         </div>
         <!-- ▲サイドバーの記事カテゴリー一覧▲ -->
 
-
-
-<?php
-// 年を抽出して配列に格納
-$args_year = array(
-    'type' => 'yearly',
-    'show_post_count' => false,
-    'format' => 'custom',
-    'echo' => false,
-);
-$archives_year = strip_tags(wp_get_archives($args_year));
-$archives_year_array = preg_split("/[\n,]/", $archives_year);
-$archives_year_array_pop = array_pop($archives_year_array);
-print_r($archives_year_array);
-
-$args_month = array(
-    'type' => 'monthly',
-    'show_post_count' => true,
-    'format' => 'custom',
-    'echo' => false,
-);
-$archives_month =strip_tags(wp_get_archives($args_month));
-$archives_month_array = preg_split("/[\n,]/", $archives_month);
-$archives_month_array_pop = array_pop($archives_month_array);
-print_r($archives_month_array);
-
-
-
-
-echo "<ul>\n";
-foreach ($archives_year_array as $year_value){
-  //<li><a href="/year">で年を表示
-  echo '<li><a href="'; bloginfo('url'); echo '/'.ltrim($year_value).'">'.ltrim($year_value)."年</a>\n";
-  echo '<ul class="cl">'."\n";
-  //月別アーカイブ数分繰り返し
-  foreach ( $archives_month_array as $archives_value) {
-    //1で取得した年と、2の各月別アーカイブの文字列を比較
-    if ( intval(strip_tags($archives_value)) == intval($year_value) ) {
-      //2の月別アーカイブの各行のhtmlからYYYY年部分を除去して表示。
-      echo  str_replace(intval($year_value).'年','',ltrim($archives_value))."\n";
-    }
-  }
-  echo "</ul>\n</li>\n";
-}
-echo "</ul>\n";
-
-
-?>
-
-
-
-
-
         <!-- ▼サイドバーの月別アーカイブ一覧▼ -->
         <div id="sidebar-widget" class="col-sm-12 mb-4">
             <div class="accordion" id="accordion2" role="tablist">
-                <div class="card-header text-center rounded-0 text-center text-white bg-primary">投稿記事一覧</div>
+                <div class="card-header text-center rounded-0 text-center text-white bg-primary">月別アーカイブ</div>
                 <?php
-                $pc_combi_list = get_category_combi_list(false);
+                $archives_year_array = extract_monthly_archive()['yearly'];
+                $archives_month_array = extract_monthly_archive()['monthly'];
                 $i = 0;
                 ?>
-                <?php foreach ($pc_combi_list as $parent => $children_list): ?>
+                <?php foreach ($archives_year_array as $year_value): ?>
                 <?php $i++; ?>
                 <div class="card rounded-0">
                     <div class="card-header bg-white" role="tab" id="heading<?php echo esc_html($i); ?>">
                         <h5 id="parent-category" class="mb-0">
-                            <a class="text-body collapsed px-3 py-3" data-toggle="collapse" href="#collapse<?php echo esc_html($i); ?>" aria-expanded="false" aria-controls="collapse<?php echo esc_html($i); ?>">
-                                <?php echo esc_html($parent); ?>
+                            <a class="text-body collapsed px-3 py-3" data-toggle="collapse" href="#collapse-month-<?php echo esc_html($i); ?>" aria-expanded="false" aria-controls="collapse-month<?php echo esc_html($i); ?>">
+                                <?php echo esc_html($year_value); ?>年
                             </a>
                         </h5>
                     </div>
-                    <div id="collapse<?php echo esc_html($i); ?>" class="collapse text-whtie" role="tabpane<?php echo esc_html($i); ?>" aria-labelledby="heading<?php echo esc_html($i); ?>" data-parent="#accordion2" style="">
-                        <?php foreach ($children_list as $children): ?>
-                        <a href="<?php echo esc_url(home_url('/category/'.$children["slug"])); ?>"><div id="child-category" class="card-body px-5 py-2"><?php echo esc_html($children["name"]); ?>    (<?php echo esc_html($children["count"]) ?>)</div></a>
+                    <div id="collapse-month-<?php echo esc_html($i); ?>" class="collapse text-whtie" role="tabpane-month-<?php echo esc_html($i); ?>" aria-labelledby="heading-month-<?php echo esc_html($i); ?>" data-parent="#accordion2" style="">
+                        <?php foreach ($archives_month_array as $archives_value): ?>
+                        <?php if ( intval(strip_tags($archives_value)) == intval($year_value) ): ?>
+                        <?php $year = intval($year_value); ?>
+                        <?php $month = strstr(str_replace(intval($year_value).'年', '', ltrim($archives_value)), '月', true); ?>
+                        <a href="<?php echo esc_url(home_url('/'.$year.'/'.$month.'/')); ?>"><div id="child-category" class="card-body px-5 py-2"><?php echo esc_html(str_replace(intval($year_value).'年', '', ltrim($archives_value))); ?></div></a>
+                        <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
                 </div>

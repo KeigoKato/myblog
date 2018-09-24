@@ -131,3 +131,34 @@ function limit_category_select() {
 <?php
 }
 add_action( 'admin_print_footer_scripts', 'limit_category_select' );
+
+/**
+ * 月別アーカイブの年と月をそれぞれ単独で抽出する
+ *
+ * @return void
+ */
+function extract_monthly_archive() {
+    $args_year = array(
+        'type' => 'yearly',
+        'show_post_count' => false,
+        'format' => 'custom',
+        'echo' => false,
+    );
+    $archives_year = strip_tags(wp_get_archives($args_year));
+    $archives_year_array = preg_split("/[\n,]/", $archives_year);
+    $archives_year_array_pop = array_pop($archives_year_array);
+
+    $args_month = array(
+        'type' => 'monthly',
+        'show_post_count' => true,
+        'format' => 'custom',
+        'echo' => false,
+    );
+    $archives_month =strip_tags(wp_get_archives($args_month));
+    $archives_month_array = preg_split("/[\n,]/", $archives_month);
+    $archives_month_array_pop = array_pop($archives_month_array);
+
+    $yearly_and_monthly = array('yearly' => $archives_year_array, 'monthly' => $archives_month_array);
+
+    return $yearly_and_monthly;
+}
