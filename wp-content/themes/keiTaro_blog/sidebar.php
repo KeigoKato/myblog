@@ -4,10 +4,13 @@
             <div class="card text-center rounded-0 mb-4">
                 <div class="card-header rounded-0 text-center text-white bg-primary">書いてる人</div>
                 <img class="card-img-top rounded-circle w-50 py-3 mx-auto" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/img-home-menu-2.png" alt="Card image cap">
-                <h5 class="card-title">けいたろう</h5>
+                <h5 class="card-title"><?php echo esc_html(get_the_author_meta('nickname')); ?></h5>
                 <small class="text-muted">WordPressエンジニア</small>
                 <div class="card-body px-4 py-3 text-left">
-                    <p class="card-text txts"><?php echo wpautop(get_the_author_meta('user_description')); ?></p>
+                    <p class="card-text txts"><?php echo esc_html(get_the_author_meta('user_description')); ?></p>
+                </div>
+                <div class="card-body px-4 py-3 text-cecenter">
+                    <p class="card-text txts">私のプロフィールは<a href="<?php echo esc_url(home_url('/myprofile/')); ?>"><mark>ここを</mark></a>クリック</p>
                 </div>
 
                 <!-- ▼丸いSNSのボタン▼ -->

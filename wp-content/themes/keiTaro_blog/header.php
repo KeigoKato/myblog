@@ -35,7 +35,7 @@
                         <a class="nav-link px-5 py-3 change-color" href="<?php echo esc_url(home_url()); ?>">トップ <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-5 py-3 change-color" href="#">プロフィール</a>
+                        <a class="nav-link px-5 py-3 change-color" href="<?php echo esc_url(home_url('/myprofile/')); ?>">プロフィール</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle px-5 py-3 change-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">記事カテゴリー</a>
