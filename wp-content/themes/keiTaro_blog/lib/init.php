@@ -5,6 +5,25 @@ if (!isset($content_width)) {
 }
 
 /**
+ * WordPressのバージョン情報が書かれたmetaタグを非表示にする
+ */
+remove_action('wp_head','wp_generator');
+
+/**
+ * プラグインのバージョン情報を非表示にする
+ *
+ * @param [type] $src
+ * @return void
+ */
+function remove_cssjs_ver2($src) {
+    if (strpos($src, 'ver='))
+        $src = remove_query_arg('ver', $src);
+    return $src;
+}
+add_filter('style_loader_src', 'remove_cssjs_ver2', 9999);
+add_filter('script_loader_src', 'remove_cssjs_ver2', 9999);
+
+/**
  * テーマの基本セットアップを組む
  *
  * @return void
