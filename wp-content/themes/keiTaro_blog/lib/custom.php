@@ -130,7 +130,7 @@ function limit_category_select() {
     </script>
 <?php
 }
-add_action( 'admin_print_footer_scripts', 'limit_category_select' );
+// add_action( 'admin_print_footer_scripts', 'limit_category_select' );
 
 /**
  * 月別アーカイブの年と月をそれぞれ単独で抽出する
