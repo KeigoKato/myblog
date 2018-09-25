@@ -456,6 +456,7 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 #content-main a {
     color: blue;
     border-bottom: solid 5px blue;
+    text-decoration: none;
 }
 @media only screen and (min-width: 781px){
     #content-main ol {
