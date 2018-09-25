@@ -158,6 +158,14 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     background-position: center;
     background-size: cover;
 }
+.header-thumbnail img {
+    width: 80%;
+}
+@media only screen and (min-width : 768px) {
+    .header-thumbnail img {
+        width: 25% !important;
+    }
+}
 .under-navmenu button {
     height: 56px;
     width: 56px;

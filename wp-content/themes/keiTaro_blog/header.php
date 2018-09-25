@@ -20,7 +20,7 @@
 
     <!-- ▼ヘッダーの大画像▼ -->
     <div class="text-center header-thumbnail">
-        <img class="my-5 w-50 h-auto" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/site-title-logo.png" alt="site_title_logo">
+        <img class="my-5 h-auto" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/site-title-logo.png" alt="site_title_logo">
     </div>
     <!-- ▲ヘッダーの大画像▲ -->
 
@@ -58,7 +58,7 @@
                         <a href="#" class="nav-link px-5 py-3 change-color" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-search"></i>  記事検索</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-5 py-3 change-color" href="#"><i class="far fa-envelope"></i>  お問い合わせ</a>
+                        <a class="nav-link px-5 py-3 change-color" href="<?php echo esc_url(home_url('/contact/')); ?>"><i class="far fa-envelope"></i>  お問い合わせ</a>
                     </li>
                 </ul>
             </div>
