@@ -13,13 +13,14 @@
         <div class="container">
             <div class="top-navbar-list d-flex py-2">
                 <a class="top-navbar-list-item pr-4 change-color" href="<?php echo esc_url(home_url()); ?>"><i class="fas fa-home"></i>  トップ</a>
-                <a class="top-navbar-list-item change-color" href="#"><i class="fas fa-user"></i>  プロフィール</a>
+                <a class="top-navbar-list-item change-color" href="<?php echo esc_url(home_url('/myprofile/')); ?>"><i class="fas fa-user"></i>  プロフィール</a>
             </div>
         </div>
     </nav>
 
     <!-- ▼ヘッダーの大画像▼ -->
     <div class="text-center header-thumbnail">
+        <div class="pt-4"><?php bloginfo('description'); ?></div>
         <img class="my-5 h-auto" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/site-title-logo.png" alt="site_title_logo">
     </div>
     <!-- ▲ヘッダーの大画像▲ -->
