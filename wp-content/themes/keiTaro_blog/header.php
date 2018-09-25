@@ -20,7 +20,7 @@
 
     <!-- ▼ヘッダーの大画像▼ -->
     <div class="text-center header-thumbnail">
-        <div class="pt-4"><?php bloginfo('description'); ?></div>
+        <div class="pt-4 d-none d-sm-block"><?php bloginfo('description'); ?></div>
         <img class="my-5 h-auto" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/site-title-logo.png" alt="site_title_logo">
     </div>
     <!-- ▲ヘッダーの大画像▲ -->

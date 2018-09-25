@@ -8,8 +8,8 @@ if (!is_404()) {
 <div id="relations">
     <div class="col-sm-12">
         <h5 class="text-center mb-3"><span class="fas fa-arrow-circle-down pr-3"></span>人気投稿<span class="d-none d-sm-inline"> - Recommended Posts -</h5>
-        <div class="card-deck">
-            <div class="row mx-sm-2">
+        <div class="card-group">
+            <div class="row">
             <?php
             setPostViews(get_the_ID());
             $args = array(
@@ -21,7 +21,7 @@ if (!is_404()) {
             query_posts($args); ?>
             <?php if (have_posts()): ?>
             <?php while(have_posts()) : the_post(); ?>
-            <div class="col-sm-3 col-6">
+            <div class="col-sm-3 col-6 mb-4 mb-sm-0">
                 <div class="card mx-0 rounded-0">
                     <a href="<?php the_permalink(); ?>">
                         <div class="imgWrapper">

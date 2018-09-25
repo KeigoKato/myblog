@@ -2,8 +2,8 @@
 <div id="relations">
     <div class="col-sm-12">
         <h5 class="text-center mb-3"><span class="fas fa-arrow-circle-down pr-3"></span>関連投稿<span class="d-none d-sm-inline"> - Related Posts -</span></h5>
-        <div class="card-deck">
-            <div class="row mx-sm-2">
+        <div class="card-group">
+            <div class="row">
             <?php
             $post_id = get_the_ID();
             $categories = get_the_category($post_id);
@@ -19,7 +19,7 @@
             ?>
             <?php if ($relation->have_posts()): ?>
             <?php while ($relation->have_posts()): $relation->the_post(); ?>
-            <div class="col-sm-3 col-6">
+            <div class="col-sm-3 col-6 mb-4 mb-sm-0">
                 <div class="card mx-0 rounded-0">
                     <a href="<?php the_permalink(); ?>">
                         <div class="imgWrapper">
