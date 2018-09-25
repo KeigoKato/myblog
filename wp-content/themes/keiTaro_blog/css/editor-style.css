@@ -34,6 +34,10 @@ h5 {
 h6 {
     font-size: 0.8rem;
 }
+a {
+    color: blue;
+    border-bottom: solid 5px blue;
+}
 @media only screen and (min-width: 781px){
     ol {
         list-style-type: decimal;

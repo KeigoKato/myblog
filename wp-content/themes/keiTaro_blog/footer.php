@@ -1,7 +1,7 @@
     <!-- ▼フッター▼ -->
     <footer class="footer mt-auto py-3 bg-secondary">
         <div class="container text-center">
-            <span class="text-white copyright"><small>Copyright© KLogNET.com , 2018 All Rights Reserved.</small></span>
+            <span class="text-white copyright"><small>Copyright© <?php bloginfo('title'); ?> , <?php echo date("Y"); ?> All Rights Reserved.</small></span>
         </div>
     </footer>
     <!-- ▲フッター▲ -->
