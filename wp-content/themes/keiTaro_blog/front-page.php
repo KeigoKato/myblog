@@ -9,17 +9,22 @@
             <div class="row mx-0">
 
                 <div class="col-sm-12">
-                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active rounded-0 balloon" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">最新記事</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link rounded-0 balloon" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">ITエンジニア</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link rounded-0 balloon" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">WordPress</a>
-                        </li>
-                    </ul>
+                    <div class="row">
+                        <ul class="nav nav-pills mb-3 w-100 px-3" id="pills-tab" role="tablist">
+                            <li class="nav-item col-sm-3 col-6 px-0 text-center">
+                                <a class="nav-link active rounded-0 balloon" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">最新記事</a>
+                            </li>
+                            <li class="nav-item col-sm-3 col-6 px-0 text-center">
+                                <a class="nav-link rounded-0 balloon" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">ITエンジニア</a>
+                            </li>
+                            <li class="nav-item col-sm-3 col-6 px-0 text-center">
+                                <a class="nav-link rounded-0 balloon" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">WordPress</a>
+                            </li>
+                            <li class="nav-item col-sm-3 col-6 px-0 text-center">
+                                <a class="nav-link rounded-0 balloon" id="pills-others-tab" data-toggle="pill" href="#pills-others" role="tab" aria-controls="pills-others" aria-selected="false">その他</a>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                             <!-- ▼最新記事一覧▼ -->
@@ -94,6 +99,12 @@
                                 <div class="col-sm-12 text-center">
                                     <a href="<?php echo esc_url(home_url('/category/it-engineer/wordpress/')); ?>"><button type="button" class="btn btn-outline-primary" href="<?php echo esc_url(home_url('/wordpress/')); ?>">もっと見る</button></a>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-others" role="tabpanel" aria-labelledby="pills-others-tab">
+                            <div class="card-deck">
+                                投稿がありません
                             </div>
                         </div>
 
