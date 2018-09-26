@@ -9,6 +9,7 @@
 <body <?php body_class(); ?>>
 
 <header>
+    <?php if (is_home() || is_front_page()): ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <div class="top-navbar-list d-flex py-2">
@@ -24,6 +25,7 @@
         <img class="my-5 h-auto" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/site-title-logo.png" alt="site_title_logo">
     </div>
     <!-- ▲ヘッダーの大画像▲ -->
+    <?php endif; ?>
 
     <!-- ▼ヘッダー大画像下のナビゲーションバー▼ -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-0 under-navmenu">
