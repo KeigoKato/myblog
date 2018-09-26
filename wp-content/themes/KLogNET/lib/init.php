@@ -42,7 +42,7 @@ function my_meta_ogp() {
         echo $insert;
     }
 }
-add_action('wp_head', 'my_meta_ogp');                                    //headにOGPを出力
+// add_action('wp_head', 'my_meta_ogp');                                    //headにOGPを出力
 
 /**
  * WordPressのバージョン情報が書かれたmetaタグを非表示にする

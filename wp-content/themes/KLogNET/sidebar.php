@@ -3,7 +3,7 @@
         <div class="col-sm-12">
             <div class="card text-center rounded-0 mb-4">
                 <div class="card-header rounded-0 text-center text-white bg-primary">プロフィール</div>
-                <img class="card-img-top rounded-circle w-50 py-3 mx-auto" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/img-home-menu-2.png" alt="Card image cap">
+                <img class="card-img-top rounded-circle w-50 py-3 mx-auto" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/my-face.png" alt="my-face">
                 <h5 class="card-title"><?php echo esc_html(get_the_author_meta('nickname')); ?></h5>
                 <small class="text-muted">WordPressエンジニア</small>
                 <div class="card-body px-4 py-3 text-left">

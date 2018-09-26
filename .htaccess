@@ -9,9 +9,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /wordpress_myblog/index.php [L]
 </IfModule>
 
-<files wp-config.php>
-order allow,deny
-deny from all
-</files>
-
 # END WordPress
