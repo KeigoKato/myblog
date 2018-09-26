@@ -29,14 +29,14 @@ function my_meta_ogp() {
             $ogp_url = home_url();
         }
         $ogp_type = (is_front_page() || is_home()) ? 'website' : 'article';
-        $ogp_img = 'TOPページ＆アイキャッチ画像がないときに使われる画像のURL';
+        $ogp_img = '<meta property="og:image" content="'.esc_attr(get_template_directory_uri()).'/img/opg_img.png">'."\n";
         $insert .= '<meta property="og:title" content="'.esc_attr($ogp_title).'" />' . "\n";
         $insert .= '<meta property="og:description" content="'.esc_attr($ogp_descr).'" />' . "\n";
         $insert .= '<meta property="og:type" content="'.$ogp_type.'" />' . "\n";
         $insert .= '<meta property="og:url" content="'.esc_url($ogp_url).'" />' . "\n";
         $insert .= '<meta property="og:image" content="'.esc_url($ogp_img).'" />' . "\n";
         $insert .= '<meta property="og:site_name" content="'.esc_attr(get_bloginfo('name')).'" />' . "\n";
-        $insert .= '<meta name="twitter:card" content="summary_large_image" />' . "\n";
+        // $insert .= '<meta name="twitter:card" content="summary_large_image" />' . "\n";
         $insert .= '<meta name="twitter:site" content="@kei_taro1129" />' . "\n";
         $insert .= '<meta property="og:locale" content="ja_JP" />' . "\n";
         echo $insert;
