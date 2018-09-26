@@ -11,11 +11,12 @@
             </a>
         </div>
         <span class="position-absolute px-3 text-white bg-primary category-on-img" style="cursor: default;">
-            <?php if (is_home() || is_front_page()): ?>
-            <?php echo esc_html(get_the_parent_category($cat)); ?>
-            <?php elseif (is_archive()): ?>
             <?php echo esc_html(get_a_child_category()); ?>
-            <?php endif; ?>
+            <?php // if (is_home() || is_front_page()): ?>
+            <?php // echo esc_html(get_the_parent_category($cat)); ?>
+            <?php // elseif (is_archive()): ?>
+            <?php // echo esc_html(get_a_child_category()); ?>
+            <?php // endif; ?>
         </span>
         <div class="card-body">
             <h5 class="mb-1">
