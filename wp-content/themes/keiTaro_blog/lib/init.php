@@ -5,6 +5,46 @@ if (!isset($content_width)) {
 }
 
 /**
+ * OGPとTwitterカードを設定する
+ *
+ * @return void
+ */
+function my_meta_ogp() {
+    if(is_front_page() || is_home() || is_singular()){
+        global $post;
+        $ogp_title = '';
+        $ogp_descr = '';
+        $ogp_url = '';
+        $ogp_img = '';
+        $insert = '';
+        if (is_singular()) {
+            setup_postdata($post);
+            $ogp_title = $post->post_title;
+            $ogp_descr = mb_substr(get_the_excerpt(), 0, 100);
+            $ogp_url = get_permalink();
+            wp_reset_postdata();
+        } elseif (is_front_page() || is_home()) {
+            $ogp_title = get_bloginfo('name');
+            $ogp_descr = get_bloginfo('description');
+            $ogp_url = home_url();
+        }
+        $ogp_type = (is_front_page() || is_home()) ? 'website' : 'article';
+        $ogp_img = 'TOPページ＆アイキャッチ画像がないときに使われる画像のURL';
+        $insert .= '<meta property="og:title" content="'.esc_attr($ogp_title).'" />' . "\n";
+        $insert .= '<meta property="og:description" content="'.esc_attr($ogp_descr).'" />' . "\n";
+        $insert .= '<meta property="og:type" content="'.$ogp_type.'" />' . "\n";
+        $insert .= '<meta property="og:url" content="'.esc_url($ogp_url).'" />' . "\n";
+        $insert .= '<meta property="og:image" content="'.esc_url($ogp_img).'" />' . "\n";
+        $insert .= '<meta property="og:site_name" content="'.esc_attr(get_bloginfo('name')).'" />' . "\n";
+        $insert .= '<meta name="twitter:card" content="summary_large_image" />' . "\n";
+        $insert .= '<meta name="twitter:site" content="@kei_taro1129" />' . "\n";
+        $insert .= '<meta property="og:locale" content="ja_JP" />' . "\n";
+        echo $insert;
+    }
+}
+add_action('wp_head', 'my_meta_ogp');                                    //headにOGPを出力
+
+/**
  * WordPressのバージョン情報が書かれたmetaタグを非表示にする
  */
 remove_action('wp_head','wp_generator');
@@ -58,12 +98,21 @@ function  css_js_reader() {
 add_action('wp_enqueue_scripts', 'css_js_reader');
 
 
-// Add Favicon
+/**
+ * ファビコンを設定する
+ *
+ * @return void
+ */
 function favicon() {
     echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_template_directory_uri().'/img/favicon.ico" />';
 }
 add_action('wp_head', 'favicon');
 
+/**
+ * 管理画面にファビコンを設定する
+ *
+ * @return void
+ */
 function admin_favicon() {
     echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_template_directory_uri().'/img/favicon.ico" />';
 }

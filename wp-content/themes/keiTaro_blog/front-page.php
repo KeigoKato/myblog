@@ -33,7 +33,6 @@
                                 <?php while (have_posts()): the_post(); ?>
                                 <?php get_template_part('main', 'loop'); ?>
                                 <?php endwhile; ?>
-                                <?php endif; ?>
                                 <!-- ▼ページネーション▼ -->
                                 <?php
                                 if (function_exists("pagination")) {
@@ -41,6 +40,7 @@
                                 }
                                 ?>
                                 <!-- ▲ページネーション▲ -->
+                                <?php endif; ?>
                                 <?php wp_reset_postdata(); ?>
                             </div>
                             <!-- ▲最新一覧▲ -->
